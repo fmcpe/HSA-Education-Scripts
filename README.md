@@ -1,32 +1,35 @@
-# 🎓 HSA Education - Các scripts hỗ trợ.
+# 🎓 HSA Education - Scripts Hỗ Trợ
 
-**I. Trình Xuất Video Bài Giảng**
-**TL;DR:** Mở bài giảng > Nhấn `F12` > Chọn thẻ `Console` > Dán code JS > Nhấn `Enter` > Bấm vào link YouTube để xem video sắc nét.
+Tuyển tập các công cụ (scripts) hỗ trợ học viên học tập hiệu quả hơn trên hệ thống HSA Education. 
+*(Lưu ý: Dự án phát triển với mục đích duy nhất là hỗ trợ học tập, hoàn toàn không có ý đồ tiêu cực).*
 
 ---
 
-Công cụ hỗ trợ khắc phục tình trạng video bài giảng bị mờ trên hệ thống HSA Education.
+## 🎥 1. Trình Xuất Video Bài Giảng
 
-## ❓ Vấn đề
-Các bài giảng trên hệ thống sử dụng trình phát video nhúng (embed) của YouTube nhưng lại ẩn tính năng tùy chỉnh độ phân giải. Điều này khiến video thường xuyên bị mờ, nhòe, gây khó khăn cho học viên trong quá trình theo dõi và ghi chép.
+**TL;DR:** Mở bài giảng > Nhấn `F12` > Chọn thẻ `Console` > Dán code JS > Nhấn `Enter` > Bấm vào link YouTube để xem nét.
 
-## 💡 Giải pháp
-Script này giúp học viên trích xuất đường dẫn YouTube gốc của bài giảng. Nhờ đó, bạn có thể xem video trực tiếp trên YouTube và tự do tùy chỉnh chất lượng lên mức cao nhất. 
-*(Lưu ý: Công cụ này được phát triển với mục đích duy nhất là hỗ trợ học viên học tập hiệu quả hơn. Hoàn toàn không có bất kỳ ý đồ tiêu cực nào).*
+### ❓ Vấn đề
+Video nhúng (embed) trên hệ thống ẩn tính năng chỉnh độ phân giải, khiến bài giảng thường bị mờ, nhòe, khó ghi chép.
 
-## ⚙️ Cơ chế hoạt động
+### 💡 Giải pháp
+Script trích xuất đường dẫn YouTube gốc. Giúp học viên xem trực tiếp trên YouTube và tự do chỉnh chất lượng video lên cao nhất.
 
-Đoạn script hoạt động tự động qua 4 bước:
-1. **Xác định bài giảng**: Trích xuất mã ID bài giảng trực tiếp từ đường dẫn trên thanh địa chỉ trình duyệt.
-2. **Xác thực quyền truy cập**: Truy cập vào cơ sở dữ liệu nội bộ của trình duyệt (`IndexedDB`) để lấy mã Token đăng nhập Firebase.
-3. **Truy xuất dữ liệu**: Gửi yêu cầu (chứa ID bài học và Token) đến máy chủ API của HSA để lấy thông tin chi tiết của bài giảng đó.
-4. **Tạo liên kết gốc**: Lấy mã `videoGuid` từ dữ liệu máy chủ trả về, ghép nối thành một đường dẫn YouTube hoàn chỉnh và hiển thị cho người dùng.
+### ⚙️ Cơ chế hoạt động
+1. **Xác định bài giảng**: Trích xuất ID bài giảng từ đường dẫn web (`/bai-giang/<id>`).
+2. **Xác thực**: Lấy mã Token đăng nhập Firebase từ bộ nhớ nội bộ (`IndexedDB`).
+3. **Truy xuất**: Gửi ID và Token lên API HSA để xin thông tin chi tiết bài học.
+4. **Tạo link**: Lấy mã `videoGuid` từ máy chủ, ghép thành link YouTube và hiển thị.
 
-## Hướng dẫn sử dụng
-
-1. Sao chép (Copy) toàn bộ đoạn mã trong file script.
-2. Truy cập vào trang bài giảng bạn đang học (đường dẫn web có định dạng `/bai-giang/<id>`).
-3. Nhấn phím `F12` (hoặc `Ctrl + Shift + I` / `Cmd + Option + I` trên Mac) để mở công cụ **Developer Tools**.
+### 🚀 Hướng dẫn sử dụng
+1. Copy toàn bộ đoạn mã trong file script.
+2. Mở trang bài giảng đang học.
+3. Nhấn `F12` (hoặc `Ctrl + Shift + I` / `Cmd + Option + I`) mở **Developer Tools**.
 4. Chuyển sang thẻ **Console**.
-5. Dán (Paste) đoạn mã vừa copy vào và nhấn `Enter`.
-6. Nhấp vào đường dẫn YouTube hiển thị trên màn hình để xem video.
+5. Dán đoạn mã vừa copy và nhấn `Enter`.
+6. Nhấp vào đường dẫn YouTube hiển thị để xem.
+
+---
+
+## ⏳ 2. [Các scripts khác sẽ được cập nhật tại đây]
+*Đang phát triển...*
