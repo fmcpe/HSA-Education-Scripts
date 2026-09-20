@@ -19,7 +19,7 @@
   const warn = (...a) => console.warn("%c[HSA]", "color:#d97706;font-weight:bold", ...a);
   const error = (...a) => console.error("%c[HSA]", "color:#dc2626;font-weight:bold", ...a);
 
-  function readFirebaseToken() {
+  function readTokenFromFireBaseDB() {
     return new Promise((resolve) => {
       const request = indexedDB.open(CONFIG.IDB_NAME);
 
@@ -101,7 +101,7 @@
   }
   log("Lesson ID:", lessonId);
 
-  const token = await readFirebaseToken();
+  const token = await readTokenFromFireBaseDB();
   if (!token) {
     error("Không lấy được token.");
     return;
