@@ -1,6 +1,7 @@
 # 🎓 HSA Education - Scripts Hỗ Trợ
 
 Tuyển tập các công cụ (scripts) hỗ trợ học viên học tập hiệu quả hơn trên hệ thống HSA Education. 
+
 *(Lưu ý: Dự án phát triển với mục đích duy nhất là hỗ trợ học tập, hoàn toàn không có ý đồ tiêu cực).*
 
 ---
